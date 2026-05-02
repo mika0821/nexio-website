@@ -21,7 +21,7 @@
   --radius-lg: 22px;
   --radius-md: 16px;
   --container: 1180px;
-  --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font: 'Inter', 'Noto Sans Armenian', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 * {
@@ -402,6 +402,41 @@ button {
 
 .nav-cta {
   margin-left: 10px;
+}
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-left: 8px;
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(14px);
+}
+
+.lang-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .04em;
+  transition: color .22s ease, background .22s ease, box-shadow .22s ease, transform .22s ease;
+}
+
+.lang-link:hover,
+.lang-link.active {
+  color: #061327;
+  background: linear-gradient(135deg, var(--cyan), #69DEFF 48%, var(--blue));
+  box-shadow: 0 10px 28px rgba(0, 194, 255, 0.22);
+  transform: translateY(-1px);
 }
 
 .btn {
@@ -1805,6 +1840,17 @@ button {
     border-radius: 16px;
     background: rgba(255,255,255,.06);
     padding: 0 16px;
+  }
+
+  .language-switcher {
+    width: 100%;
+    margin: 8px 0 0;
+    padding: 6px;
+  }
+
+  .lang-link {
+    flex: 1;
+    min-height: 40px;
   }
 
   .nav-cta {

@@ -52,3 +52,14 @@ Update these placeholder details:
 - The contact form uses `mailto:` so it works on GitHub Pages without a backend.
 - The website is fully static: no build tools, no frameworks, and no server required.
 - The design uses CSS animations, responsive layouts, dropdown navigation, mobile menu, portfolio filtering, and a premium navy/cyan style system.
+
+
+## Multilingual Pages
+
+This version includes English, Armenian, and Russian pages.
+
+- English: `index.html`, `services.html`, `work.html`, `about.html`, `contact.html`
+- Armenian: `index-hy.html`, `services-hy.html`, `work-hy.html`, `about-hy.html`, `contact-hy.html`
+- Russian: `index-ru.html`, `services-ru.html`, `work-ru.html`, `about-ru.html`, `contact-ru.html`
+
+Use the language switcher in the navbar to move between languages.
