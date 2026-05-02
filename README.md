@@ -25,8 +25,10 @@ nexio-website/
 │   ├── js/
 │   │   └── script.js
 │   └── img/
-│       ├── nexio-logo.svg
-│       └── favicon.svg
+│       ├── nexio-logo.png
+│       ├── nexio-logo-dark.png
+│       ├── favicon.png
+│       └── favicon.ico
 └── README.md
 ```
 
@@ -63,3 +65,19 @@ This version includes English, Armenian, and Russian pages.
 - Russian: `index-ru.html`, `services-ru.html`, `work-ru.html`, `about-ru.html`, `contact-ru.html`
 
 Use the language switcher in the navbar to move between languages.
+
+
+## Polish update
+
+This version includes smaller, more readable typography, flag language buttons, improved mobile spacing, smoother hover effects, and premium animated accents.
+
+To replace the logo and favicon later, overwrite:
+
+- `assets/img/nexio-logo.png`
+- `assets/img/favicon.png`
+- `assets/img/favicon.ico`
+
+
+## Final update
+
+This version includes the custom Nexio logo, favicon, multilingual pages, responsive layout improvements, language flags, and visual polish for GitHub Pages.

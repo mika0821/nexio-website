@@ -138,3 +138,17 @@ if (contactForm) {
     window.location.href = `mailto:hello@nexio.am?subject=${subject}&body=${body}`;
   });
 }
+
+
+// Premium card spotlight effect
+const spotlightCards = document.querySelectorAll('.service-card, .work-card, .value-card, .process-card, .testimonial-card, .contact-card, .info-panel, .price-card, .service-detail, .case-card');
+
+spotlightCards.forEach((card) => {
+  card.addEventListener('pointermove', (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    card.style.setProperty('--mx', `${x}%`);
+    card.style.setProperty('--my', `${y}%`);
+  });
+});
