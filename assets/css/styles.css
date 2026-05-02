@@ -2605,3 +2605,293 @@ p, li {
     height: 42px;
   }
 }
+
+
+/* Short copy + fit update: smaller readable text, better card fitting in EN/HY/RU */
+:root {
+  --container: 1160px;
+}
+
+body {
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+p, li, input, textarea, select, button {
+  line-height: 1.58;
+}
+
+.section {
+  padding: 86px 0;
+}
+
+.section.tight {
+  padding: 58px 0;
+}
+
+.section-head {
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.75rem, 3.8vw, 3.35rem);
+  line-height: 1.05;
+  max-width: 650px;
+}
+
+.section-head p,
+.value-inner p,
+.page-hero p,
+.hero-subtitle,
+.about-copy p,
+.contact-card p {
+  font-size: .95rem;
+  line-height: 1.62;
+}
+
+.hero-title {
+  font-size: clamp(2.45rem, 6vw, 5.35rem);
+  line-height: 1.02;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.25rem, 4.9vw, 4.65rem);
+  line-height: 1.04;
+  max-width: 900px;
+}
+
+.services-grid {
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  align-items: stretch;
+}
+
+.service-card {
+  min-height: 238px;
+  padding: 22px;
+}
+
+.service-card h3,
+.value-card h3,
+.process-card h3,
+.work-content h3,
+.mission-card h3,
+.comparison-card h3 {
+  line-height: 1.18;
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
+
+.service-card h3 {
+  margin: 22px 0 8px;
+  font-size: 1rem;
+}
+
+.service-card p,
+.value-card p,
+.process-card p,
+.work-content p,
+.testimonial-card p,
+.footer-brand p,
+.footer-col a,
+.footer-col li,
+.form-note,
+.mission-card p,
+.comparison-card p,
+.service-detail p,
+.service-detail li {
+  font-size: .9rem;
+  line-height: 1.52;
+}
+
+.value-card {
+  min-height: 178px;
+  padding: 21px;
+}
+
+.process-card {
+  min-height: 190px;
+  padding: 22px;
+}
+
+.testimonial-card {
+  padding: 22px;
+}
+
+.service-detail {
+  grid-template-columns: 72px minmax(0, 1fr) minmax(200px, .42fr);
+  gap: 20px;
+  padding: 24px;
+}
+
+.service-detail h2 {
+  font-size: clamp(1.35rem, 2.35vw, 2.05rem);
+  line-height: 1.12;
+}
+
+.service-detail ul {
+  gap: 8px;
+}
+
+.work-content {
+  padding: 20px;
+}
+
+.work-media,
+.case-card .work-media {
+  height: 215px;
+}
+
+.case-card .work-media {
+  height: 270px;
+}
+
+.mission-card {
+  min-height: 210px;
+  padding: 24px;
+}
+
+.about-copy h2,
+.contact-card h2,
+.why-panel h2,
+.value-inner h2 {
+  font-size: clamp(1.75rem, 3.8vw, 3.35rem);
+  line-height: 1.06;
+}
+
+.dropdown-panel {
+  width: min(720px, calc(100vw - 32px));
+}
+
+.dropdown-item {
+  grid-template-columns: 38px 1fr;
+  gap: 10px;
+  padding: 11px;
+}
+
+.dropdown-item strong {
+  font-size: 13px;
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
+.dropdown-item span {
+  font-size: 11.5px;
+  line-height: 1.35;
+}
+
+.nav-icon,
+.service-icon,
+.value-icon,
+.step-number,
+.contact-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+}
+
+.card-link {
+  font-size: .9rem;
+}
+
+.cta-band h2 {
+  font-size: clamp(1.65rem, 3.5vw, 3.15rem);
+  line-height: 1.06;
+}
+
+@media (max-width: 1120px) {
+  .service-detail {
+    grid-template-columns: 62px 1fr;
+  }
+  .service-detail ul {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 920px) {
+  .section {
+    padding: 68px 0;
+  }
+  .hero-title {
+    font-size: clamp(2.25rem, 9vw, 4rem);
+  }
+  .services-grid,
+  .value-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .service-card,
+  .value-card,
+  .process-card,
+  .testimonial-card,
+  .mission-card {
+    min-height: auto;
+  }
+  .dropdown-item strong {
+    font-size: 14px;
+  }
+  .dropdown-item span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    font-size: 14.5px;
+  }
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+  .hero-title,
+  .page-hero h1,
+  .section-head h2 {
+    letter-spacing: -0.032em;
+  }
+  .hero-title {
+    font-size: clamp(2rem, 10.8vw, 3.05rem);
+  }
+  .page-hero h1,
+  .section-head h2 {
+    font-size: clamp(1.85rem, 9vw, 2.7rem);
+  }
+  .services-grid,
+  .value-grid,
+  .mission-grid,
+  .process-grid,
+  .work-grid,
+  .testimonial-grid,
+  .case-study-grid,
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+  .service-card,
+  .value-card,
+  .process-card,
+  .testimonial-card,
+  .service-detail,
+  .form-card,
+  .info-panel,
+  .mission-card,
+  .comparison-card {
+    padding: 18px;
+  }
+  .service-detail {
+    grid-template-columns: 1fr;
+  }
+  .service-detail ul {
+    grid-column: auto;
+  }
+  .work-content {
+    padding: 16px;
+  }
+  .work-media,
+  .case-card .work-media {
+    height: 190px;
+  }
+  .tag-row {
+    gap: 6px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 6px 9px;
+  }
+}
