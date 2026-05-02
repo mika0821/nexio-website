@@ -152,3 +152,31 @@ spotlightCards.forEach((card) => {
     card.style.setProperty('--my', `${y}%`);
   });
 });
+
+
+// Desktop hover support for services dropdown
+const desktopMq = window.matchMedia('(min-width: 921px)');
+
+dropdowns.forEach((dropdown) => {
+  const trigger = dropdown.querySelector('.dropdown-trigger');
+  if (!trigger) return;
+
+  dropdown.addEventListener('mouseenter', () => {
+    if (!desktopMq.matches) return;
+    dropdowns.forEach((item) => {
+      if (item !== dropdown) {
+        item.classList.remove('open');
+        const otherTrigger = item.querySelector('.dropdown-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    dropdown.classList.add('open');
+    trigger.setAttribute('aria-expanded', 'true');
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    if (!desktopMq.matches) return;
+    dropdown.classList.remove('open');
+    trigger.setAttribute('aria-expanded', 'false');
+  });
+});
