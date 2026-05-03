@@ -43,11 +43,20 @@ dropdowns.forEach((dropdown) => {
 
   if (!trigger || !panel) return;
 
+  const setOpenState = (open) => {
+    dropdown.classList.toggle('open', open);
+    trigger.setAttribute('aria-expanded', String(open));
+  };
+
   trigger.addEventListener('click', (event) => {
     const isMobile = window.matchMedia('(max-width: 920px)').matches;
-    if (isMobile) {
+
+    if (!isMobile) {
       event.preventDefault();
+      return;
     }
+
+    event.preventDefault();
 
     dropdowns.forEach((item) => {
       if (item !== dropdown) {
@@ -57,8 +66,27 @@ dropdowns.forEach((dropdown) => {
       }
     });
 
-    const isOpen = dropdown.classList.toggle('open');
-    trigger.setAttribute('aria-expanded', String(isOpen));
+    const isOpen = !dropdown.classList.contains('open');
+    setOpenState(isOpen);
+  });
+
+  dropdown.addEventListener('mouseenter', () => {
+    if (window.matchMedia('(max-width: 920px)').matches) return;
+
+    dropdowns.forEach((item) => {
+      if (item !== dropdown) {
+        item.classList.remove('open');
+        const otherTrigger = item.querySelector('.dropdown-trigger');
+        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    setOpenState(true);
+  });
+
+  dropdown.addEventListener('mouseleave', () => {
+    if (window.matchMedia('(max-width: 920px)').matches) return;
+    setOpenState(false);
   });
 });
 
@@ -150,33 +178,5 @@ spotlightCards.forEach((card) => {
     const y = ((event.clientY - rect.top) / rect.height) * 100;
     card.style.setProperty('--mx', `${x}%`);
     card.style.setProperty('--my', `${y}%`);
-  });
-});
-
-
-// Desktop hover support for services dropdown
-const desktopMq = window.matchMedia('(min-width: 921px)');
-
-dropdowns.forEach((dropdown) => {
-  const trigger = dropdown.querySelector('.dropdown-trigger');
-  if (!trigger) return;
-
-  dropdown.addEventListener('mouseenter', () => {
-    if (!desktopMq.matches) return;
-    dropdowns.forEach((item) => {
-      if (item !== dropdown) {
-        item.classList.remove('open');
-        const otherTrigger = item.querySelector('.dropdown-trigger');
-        if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
-      }
-    });
-    dropdown.classList.add('open');
-    trigger.setAttribute('aria-expanded', 'true');
-  });
-
-  dropdown.addEventListener('mouseleave', () => {
-    if (!desktopMq.matches) return;
-    dropdown.classList.remove('open');
-    trigger.setAttribute('aria-expanded', 'false');
   });
 });
