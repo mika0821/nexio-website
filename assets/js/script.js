@@ -66,8 +66,7 @@ dropdowns.forEach((dropdown) => {
       }
     });
 
-    const isOpen = !dropdown.classList.contains('open');
-    setOpenState(isOpen);
+    setOpenState(!dropdown.classList.contains('open'));
   });
 
   dropdown.addEventListener('mouseenter', () => {

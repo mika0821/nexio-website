@@ -2896,14 +2896,73 @@ p, li, input, textarea, select, button {
   }
 }
 
-/* === Dropdown comfort fix + service icon alignment === */
+
+/* =========================================================
+   FINAL COMPACT PROFESSIONAL UPDATE
+   Smaller typography, cleaner homepage, hover dropdown,
+   centered service icons.
+========================================================= */
+
+body {
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section.tight {
+  padding: 48px 0;
+}
+
+.section-head {
+  margin-bottom: 28px;
+}
+
+.section-head h2,
+.page-hero h1,
+.cta-band h2,
+.why-panel h2,
+.about-copy h2,
+.contact-card h2 {
+  font-size: clamp(1.75rem, 3.4vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.section-head p,
+.hero-subtitle,
+.page-hero p,
+.service-card p,
+.work-content p,
+.process-card p,
+.value-card p,
+.testimonial-card p,
+.service-detail p,
+.service-detail li,
+.footer-brand p,
+.footer-col a,
+.footer-col li {
+  font-size: .88rem;
+  line-height: 1.52;
+}
+
+.logo img {
+  height: 36px;
+}
+
+.nav-wrap {
+  height: 76px;
+}
+
 .dropdown {
   position: relative;
-  padding-bottom: 6px;
+  padding-bottom: 8px;
 }
 
 .dropdown::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   right: 0;
@@ -2912,15 +2971,21 @@ p, li, input, textarea, select, button {
 }
 
 .dropdown-panel {
-  top: calc(100% + 8px);
+  top: calc(100% + 6px);
+  width: min(620px, calc(100vw - 30px));
+  padding: 10px;
 }
 
 .dropdown-grid {
-  gap: 10px;
+  gap: 8px;
 }
 
 .dropdown-item {
+  grid-template-columns: 38px 1fr;
   align-items: center;
+  gap: 10px;
+  min-height: 66px;
+  padding: 10px;
 }
 
 .dropdown-item:hover,
@@ -2928,6 +2993,217 @@ p, li, input, textarea, select, button {
   transform: none;
 }
 
+.dropdown-item strong {
+  font-size: 12.5px;
+  line-height: 1.2;
+}
+
+.dropdown-item span span {
+  display: block;
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.nav-icon,
+.service-icon,
+.value-icon,
+.contact-icon,
+.step-number {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 13px;
+}
+
+.nav-icon svg,
+.service-icon svg,
+.value-icon svg,
+.contact-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+/* Compact homepage */
+.compact-home {
+  min-height: auto;
+  padding: 120px 0 68px;
+}
+
+.compact-hero-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(360px, .78fr);
+  align-items: center;
+  gap: 56px;
+}
+
+.compact-hero-copy {
+  max-width: 590px;
+}
+
+.compact-hero-copy h1 {
+  margin: 18px 0 16px;
+  color: #fff;
+  font-size: clamp(2.35rem, 5vw, 4.35rem);
+  line-height: 1.03;
+  letter-spacing: -0.055em;
+}
+
+.compact-hero-copy p {
+  max-width: 520px;
+  margin: 0 0 24px;
+  color: rgba(232, 238, 245, .76);
+  font-size: .96rem;
+}
+
+.compact-actions {
+  margin: 0;
+}
+
+.compact-showcase {
+  position: relative;
+  min-height: 360px;
+}
+
+.showcase-window {
+  position: relative;
+  width: min(100%, 500px);
+  margin-left: auto;
+  padding: 16px;
+  border-radius: 28px;
+  border: 1px solid rgba(255,255,255,.16);
+  background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.055));
+  box-shadow: 0 34px 90px rgba(0, 8, 22, .34);
+  backdrop-filter: blur(18px);
+}
+
+.showcase-top {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.showcase-top span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.45);
+}
+
+.showcase-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 16px;
+}
+
+.showcase-left,
+.showcase-art,
+.showcase-cards span {
+  border-radius: 18px;
+  background: rgba(7, 26, 51, .62);
+}
+
+.showcase-left {
+  min-height: 210px;
+  padding: 22px;
+}
+
+.line {
+  height: 13px;
+  width: 78%;
+  border-radius: 999px;
+  background: rgba(255,255,255,.22);
+  margin-bottom: 13px;
+}
+
+.line.big {
+  height: 22px;
+  width: 92%;
+  background: rgba(255,255,255,.34);
+}
+
+.line.short {
+  width: 55%;
+}
+
+.pill-button {
+  width: 116px;
+  height: 36px;
+  border-radius: 999px;
+  margin-top: 28px;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  box-shadow: 0 16px 34px rgba(0,194,255,.22);
+}
+
+.showcase-art {
+  min-height: 210px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.showcase-art span {
+  width: 120px;
+  height: 120px;
+  border-radius: 36px;
+  background: radial-gradient(circle at 30% 30%, rgba(0,194,255,.95), rgba(20,124,255,.26));
+  box-shadow: 0 0 70px rgba(0,194,255,.22);
+}
+
+.showcase-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.showcase-cards span {
+  min-height: 76px;
+  background:
+    linear-gradient(90deg, rgba(0,194,255,.45), rgba(0,194,255,0)) 18px 18px / 52px 8px no-repeat,
+    rgba(7, 26, 51, .54);
+}
+
+.compact-section {
+  padding: 68px 0;
+}
+
+.compact-services {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.compact-services .service-card {
+  min-height: 208px;
+  padding: 20px;
+}
+
+.compact-services .service-card h3 {
+  margin: 18px 0 8px;
+  font-size: .98rem;
+  line-height: 1.18;
+}
+
+.compact-work .work-media {
+  height: 190px;
+}
+
+.compact-work .work-content {
+  padding: 18px;
+}
+
+.compact-process {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compact-process .process-card {
+  min-height: 170px;
+}
+
+/* Service page icon alignment */
 .service-detail {
   align-items: center;
 }
@@ -2946,7 +3222,25 @@ p, li, input, textarea, select, button {
   height: 28px;
 }
 
+/* Hide old hero proof if a browser cache mixes old/new */
+.hero-proof {
+  display: none;
+}
+
 @media (max-width: 1120px) {
+  .compact-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .showcase-window {
+    margin-inline: auto;
+  }
+
+  .compact-services {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .service-detail {
     align-items: start;
   }
@@ -2954,5 +3248,99 @@ p, li, input, textarea, select, button {
   .service-detail .service-icon {
     align-self: start;
     justify-self: start;
+  }
+}
+
+@media (max-width: 920px) {
+  body {
+    font-size: 14px;
+  }
+
+  .nav-wrap {
+    height: 70px;
+  }
+
+  .logo img {
+    height: 32px;
+  }
+
+  .compact-home {
+    padding: 102px 0 54px;
+  }
+
+  .compact-hero-copy h1 {
+    font-size: clamp(2rem, 8.8vw, 3.25rem);
+  }
+
+  .compact-services,
+  .compact-process,
+  .compact-work {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dropdown {
+    padding-bottom: 0;
+  }
+
+  .dropdown::after {
+    display: none;
+  }
+
+  .dropdown-panel {
+    top: auto;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .section,
+  .compact-section {
+    padding: 56px 0;
+  }
+
+  .compact-home {
+    padding: 92px 0 46px;
+  }
+
+  .compact-hero-copy h1 {
+    font-size: clamp(1.85rem, 10vw, 2.75rem);
+    letter-spacing: -0.04em;
+  }
+
+  .compact-hero-copy p {
+    font-size: .88rem;
+  }
+
+  .compact-actions {
+    flex-direction: column;
+  }
+
+  .compact-actions .btn {
+    width: 100%;
+  }
+
+  .showcase-layout,
+  .showcase-cards,
+  .compact-services,
+  .compact-process,
+  .compact-work {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-left,
+  .showcase-art {
+    min-height: 150px;
+  }
+
+  .showcase-cards span {
+    min-height: 62px;
+  }
+
+  .compact-services .service-card {
+    min-height: auto;
   }
 }
