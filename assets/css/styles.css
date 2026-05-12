@@ -5453,3 +5453,144 @@ body {
     height: 300px;
   }
 }
+
+
+/* =========================================================
+   YoLingo case study page
+========================================================= */
+
+.yolingo-case-hero {
+  background:
+    radial-gradient(circle at 70% 16%, rgba(151, 71, 255, .22), transparent 32%),
+    radial-gradient(circle at 10% 88%, rgba(214, 77, 173, .15), transparent 28%),
+    linear-gradient(180deg, #111026, #171124);
+}
+
+.yolingo-screens-section {
+  background:
+    radial-gradient(circle at 90% 10%, rgba(151,71,255,.08), transparent 24%),
+    linear-gradient(180deg, #f8fbff, #eef5fd);
+}
+
+.yolingo-screen-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.yolingo-screen-card {
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 14px;
+  background: #fff;
+  border: 1px solid rgba(151, 71, 255, .14);
+  box-shadow: 0 22px 64px rgba(17, 16, 38, .10);
+}
+
+.yolingo-screen-card.large-screen {
+  grid-column: 1 / -1;
+}
+
+.yolingo-screen-card img {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 20px;
+  background: #171124;
+}
+
+.yolingo-screen-card.large-screen img {
+  height: 440px;
+}
+
+.yolingo-screen-card div {
+  padding: 18px 8px 6px;
+}
+
+.yolingo-screen-card h3 {
+  margin: 12px 0 0;
+  color: var(--text);
+  font-size: 1.18rem;
+  letter-spacing: -0.03em;
+}
+
+.yolingo-mobile-section {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(151,71,255,.14), transparent 28%),
+    linear-gradient(180deg, #111026, #171124);
+  color: #fff;
+}
+
+.mobile-showcase-grid {
+  display: grid;
+  grid-template-columns: .72fr 1fr;
+  gap: 44px;
+  align-items: center;
+}
+
+.mobile-showcase-copy h2 {
+  margin: 14px 0 14px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.mobile-showcase-copy p {
+  color: rgba(232, 238, 245, .72);
+  line-height: 1.7;
+}
+
+.mobile-phone-row {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.mobile-phone-row img {
+  width: min(48%, 310px);
+  max-height: 640px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: 36px;
+  border: 8px solid rgba(255,255,255,.08);
+  box-shadow: 0 26px 80px rgba(0,0,0,.28);
+  background: #111026;
+}
+
+@media (max-width: 920px) {
+  .yolingo-screen-grid,
+  .mobile-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .yolingo-screen-card img,
+  .yolingo-screen-card.large-screen img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .yolingo-screen-card {
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .yolingo-screen-card img,
+  .yolingo-screen-card.large-screen img {
+    height: 230px;
+    border-radius: 16px;
+  }
+
+  .mobile-phone-row {
+    gap: 10px;
+  }
+
+  .mobile-phone-row img {
+    width: 49%;
+    border-radius: 26px;
+    border-width: 5px;
+    max-height: 520px;
+  }
+}
