@@ -4328,3 +4328,94 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* =========================================================
+   Mobile Nexio System explanation update
+   Removes confusing 01 badge and adds meaningful content.
+========================================================= */
+
+@media (max-width: 720px) {
+  .mobile-panel-top em {
+    min-width: auto;
+    padding: 0 11px;
+    color: #dff8ff;
+    background: rgba(0,194,255,0.10);
+    border: 1px solid rgba(0,194,255,0.22);
+    font-size: 10px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+
+  .mobile-panel-core {
+    grid-template-columns: 74px 1fr;
+  }
+
+  .mobile-core-copy {
+    min-width: 0;
+  }
+
+  .mobile-core-copy strong,
+  .mobile-core-copy small {
+    display: block;
+  }
+
+  .mobile-core-copy strong {
+    color: #fff;
+    font-size: 1.02rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  .mobile-core-copy small {
+    margin-top: 5px;
+    color: rgba(232,238,245,.62);
+    font-size: 0.74rem;
+    line-height: 1.35;
+  }
+
+  .mobile-core-progress {
+    display: block;
+    width: min(100%, 170px);
+    height: 6px;
+    margin-top: 12px;
+    border-radius: 999px;
+    background:
+      linear-gradient(90deg, rgba(0,194,255,.95), rgba(20,124,255,.72) 58%, rgba(255,255,255,.12) 58%);
+  }
+
+  .mobile-core-lines {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .mobile-panel-top {
+    gap: 10px;
+  }
+
+  .mobile-panel-top em {
+    font-size: 9.5px;
+    padding: 0 9px;
+  }
+
+  .mobile-panel-core {
+    grid-template-columns: 66px 1fr;
+    padding: 12px;
+  }
+
+  .mobile-core-logo {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+
+  .mobile-core-logo img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .mobile-core-copy strong {
+    font-size: .94rem;
+  }
+}
