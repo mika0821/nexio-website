@@ -3701,3 +3701,175 @@ body {
     justify-content: space-between;
   }
 }
+
+
+/* Portfolio project images */
+.work-image {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 1px solid rgba(20, 124, 255, 0.12);
+  background: #f4f7fb;
+}
+
+.case-card .work-image {
+  height: 260px;
+}
+
+.compact-work .work-image {
+  height: 210px;
+}
+
+@media (max-width: 640px) {
+  .work-image,
+  .case-card .work-image,
+  .compact-work .work-image {
+    height: 190px;
+  }
+}
+
+
+/* =========================================================
+   Mobile-only homepage cleanup
+   Keeps desktop design, simplifies mobile hero section.
+========================================================= */
+
+@media (max-width: 720px) {
+  .hero-wow.compact-home {
+    padding: 92px 0 42px;
+    min-height: auto;
+  }
+
+  .hero-wow-grid {
+    display: block;
+  }
+
+  .hero-wow .compact-hero-copy {
+    max-width: 100%;
+  }
+
+  .hero-wow .compact-hero-copy .eyebrow {
+    font-size: 11px;
+    padding: 7px 10px;
+    margin-bottom: 8px;
+  }
+
+  .hero-wow .compact-hero-copy h1 {
+    margin: 14px 0 12px;
+    max-width: 100%;
+    font-size: clamp(2rem, 10.5vw, 2.9rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .hero-wow .compact-hero-copy p {
+    max-width: 100%;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+    line-height: 1.58;
+  }
+
+  .hero-wow .compact-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .hero-wow .compact-actions .btn {
+    width: 100%;
+    min-height: 50px;
+  }
+
+  .nexio-showcase {
+    min-height: auto;
+  }
+
+  .nexio-system {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .system-glow,
+  .connector,
+  .core-orbit {
+    display: none;
+  }
+
+  .nexio-core {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+    height: 150px;
+    border-radius: 24px;
+    margin: 0 0 4px;
+  }
+
+  .nexio-core::before {
+    inset: 12px;
+    border-radius: 18px;
+  }
+
+  .nexio-core::after {
+    left: 24px;
+    right: 24px;
+    bottom: 20px;
+    height: 10px;
+  }
+
+  .core-logo-shell {
+    width: 78px;
+    height: 78px;
+    border-radius: 22px;
+  }
+
+  .core-logo-shell img {
+    width: 54px;
+    height: 54px;
+  }
+
+  .system-card {
+    position: relative;
+    inset: auto !important;
+    min-width: 0;
+    width: 100%;
+    padding: 15px 16px;
+    border-radius: 18px;
+    animation: none;
+  }
+
+  .system-card small {
+    font-size: 10.5px;
+    letter-spacing: 0.08em;
+  }
+
+  .system-card strong {
+    font-size: 0.98rem;
+  }
+
+  .card-accent {
+    height: 4px;
+    width: 74px;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-wow .compact-hero-copy h1 {
+    font-size: clamp(1.85rem, 10vw, 2.45rem);
+  }
+
+  .system-card {
+    padding: 14px;
+  }
+}
