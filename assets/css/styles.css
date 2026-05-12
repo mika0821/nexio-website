@@ -4966,3 +4966,110 @@ body {
     height: 19px !important;
   }
 }
+
+
+/* =========================================================
+   AIMMS redesign portfolio additions
+========================================================= */
+
+.work-image {
+  width: 100%;
+  height: 220px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  border: 1px solid rgba(20, 124, 255, 0.12);
+  background: #f4f7fb;
+}
+
+.case-card .work-image {
+  height: 260px;
+}
+
+.compact-work .work-image {
+  height: 210px;
+}
+
+.redesign-case-section {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(0,194,255,.08), transparent 24%),
+    linear-gradient(180deg, rgba(248,251,255,0.96), rgba(236,244,253,0.96));
+}
+
+.redesign-comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.redesign-comparison-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(244,248,255,0.88));
+  border: 1px solid rgba(20, 124, 255, 0.13);
+  box-shadow: 0 24px 70px rgba(7, 26, 51, 0.12);
+}
+
+.comparison-image {
+  width: 100%;
+  height: 360px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 20px;
+  border: 1px solid rgba(20, 124, 255, 0.12);
+  background: #eaf2fb;
+}
+
+.comparison-copy {
+  padding: 20px 8px 8px;
+}
+
+.comparison-copy h3 {
+  margin: 12px 0 8px;
+  font-size: 1.35rem;
+  letter-spacing: -0.035em;
+  color: var(--text);
+}
+
+.comparison-copy p {
+  margin: 0;
+  color: #607186;
+  font-size: .93rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 920px) {
+  .redesign-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .comparison-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .work-image,
+  .case-card .work-image,
+  .compact-work .work-image {
+    height: 190px;
+  }
+
+  .redesign-comparison-card {
+    padding: 10px;
+    border-radius: 22px;
+  }
+
+  .comparison-image {
+    height: 220px;
+    border-radius: 16px;
+  }
+
+  .comparison-copy {
+    padding: 16px 6px 6px;
+  }
+}
