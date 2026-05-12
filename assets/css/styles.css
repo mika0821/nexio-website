@@ -4702,3 +4702,163 @@ body {
     height: 17px;
   }
 }
+
+
+/* =========================================================
+   FINAL dropdown icon centering fix
+   Replaces inline SVG visual positioning with centered CSS icons.
+========================================================= */
+
+.dropdown-grid .nav-icon {
+  position: relative;
+  display: grid !important;
+  place-items: center !important;
+  width: 46px !important;
+  height: 46px !important;
+  min-width: 46px !important;
+  border-radius: 16px !important;
+  color: var(--cyan);
+  overflow: hidden;
+}
+
+.dropdown-grid .nav-icon svg {
+  display: none !important;
+}
+
+.dropdown-grid .nav-icon::before,
+.dropdown-grid .nav-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Web Design: centered browser window */
+.dropdown-grid .nav-icon-web::before {
+  width: 21px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+}
+
+.dropdown-grid .nav-icon-web::after {
+  width: 21px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transform: translate(-50%, -4px);
+  box-shadow:
+    -5px -5px 0 -3px currentColor,
+    0 -5px 0 -3px currentColor;
+}
+
+/* Website Redesign: centered circular refresh */
+.dropdown-grid .nav-icon-refresh::before {
+  width: 22px;
+  height: 22px;
+  border: 2px solid currentColor;
+  border-left-color: transparent;
+  border-radius: 50%;
+}
+
+.dropdown-grid .nav-icon-refresh::after {
+  width: 7px;
+  height: 7px;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: translate(3px, -10px) rotate(16deg);
+}
+
+/* E-commerce: centered shopping bag */
+.dropdown-grid .nav-icon-shop::before {
+  width: 19px;
+  height: 17px;
+  border: 2px solid currentColor;
+  border-radius: 5px 5px 6px 6px;
+  transform: translate(-50%, -43%);
+}
+
+.dropdown-grid .nav-icon-shop::after {
+  width: 10px;
+  height: 8px;
+  border: 2px solid currentColor;
+  border-bottom: 0;
+  border-radius: 9px 9px 0 0;
+  transform: translate(-50%, -92%);
+}
+
+/* Brand Identity: centered badge */
+.dropdown-grid .nav-icon-brand::before {
+  width: 21px;
+  height: 21px;
+  border: 2px solid currentColor;
+  border-radius: 7px;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.dropdown-grid .nav-icon-brand::after {
+  width: 7px;
+  height: 11px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translate(-50%, -58%) rotate(45deg);
+}
+
+/* Social Design: centered content card */
+.dropdown-grid .nav-icon-social::before {
+  width: 20px;
+  height: 18px;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+}
+
+.dropdown-grid .nav-icon-social::after {
+  width: 11px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 999px;
+  transform: translate(-28%, -2px);
+  box-shadow:
+    0 6px 0 currentColor,
+    -7px -6px 0 -1px currentColor;
+}
+
+/* Premium hover movement without breaking centering */
+.dropdown-item:hover .nav-icon,
+.dropdown-item:focus-visible .nav-icon {
+  transform: translateY(-1px) scale(1.02);
+}
+
+.dropdown-item:hover .nav-icon::before,
+.dropdown-item:hover .nav-icon::after,
+.dropdown-item:focus-visible .nav-icon::before,
+.dropdown-item:focus-visible .nav-icon::after {
+  color: #7be8ff;
+}
+
+@media (max-width: 920px) {
+  .dropdown-grid .nav-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    border-radius: 13px !important;
+  }
+
+  .dropdown-grid .nav-icon-web::before { width: 18px; height: 14px; }
+  .dropdown-grid .nav-icon-web::after { width: 18px; transform: translate(-50%, -4px); }
+
+  .dropdown-grid .nav-icon-refresh::before { width: 19px; height: 19px; }
+  .dropdown-grid .nav-icon-refresh::after { transform: translate(2px, -9px) rotate(16deg); }
+
+  .dropdown-grid .nav-icon-shop::before { width: 17px; height: 15px; }
+  .dropdown-grid .nav-icon-shop::after { width: 9px; height: 7px; }
+
+  .dropdown-grid .nav-icon-brand::before { width: 18px; height: 18px; }
+  .dropdown-grid .nav-icon-brand::after { width: 6px; height: 10px; }
+
+  .dropdown-grid .nav-icon-social::before { width: 18px; height: 16px; }
+  .dropdown-grid .nav-icon-social::after { width: 9px; }
+}
