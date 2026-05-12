@@ -180,3 +180,22 @@ spotlightCards.forEach((card) => {
     card.style.setProperty('--my', `${y}%`);
   });
 });
+
+
+// Before / After comparison sliders
+document.querySelectorAll('.ba-slider').forEach((slider) => {
+  const range = slider.querySelector('.ba-range');
+  const afterWrap = slider.querySelector('.ba-after-wrap');
+  const handle = slider.querySelector('.ba-handle');
+
+  const updateSlider = (value) => {
+    const percentage = `${value}%`;
+    afterWrap.style.width = percentage;
+    handle.style.left = percentage;
+  };
+
+  if (range && afterWrap && handle) {
+    updateSlider(range.value);
+    range.addEventListener('input', (event) => updateSlider(event.target.value));
+  }
+});
