@@ -3632,3 +3632,72 @@ body {
     font-size: .92rem;
   }
 }
+
+
+/* =========================================================
+   Navbar symmetry fix
+   Makes Services align visually with Home / Work / About / Contact
+========================================================= */
+
+.nav-list {
+  gap: 8px;
+}
+
+.nav-list > li {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link,
+.dropdown-trigger {
+  height: 44px;
+  min-height: 44px;
+  padding: 0 16px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.dropdown-trigger svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  margin-top: 1px;
+}
+
+.dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-trigger {
+  white-space: nowrap;
+}
+
+/* Keep the desktop hover area without changing visual alignment */
+@media (min-width: 921px) {
+  .dropdown {
+    padding-bottom: 0;
+  }
+
+  .dropdown::after {
+    top: 100%;
+    height: 14px;
+  }
+
+  .dropdown-panel {
+    top: calc(100% + 10px);
+  }
+}
+
+@media (max-width: 920px) {
+  .nav-link,
+  .dropdown-trigger {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    justify-content: space-between;
+  }
+}
