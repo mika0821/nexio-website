@@ -4862,3 +4862,54 @@ body {
   .dropdown-grid .nav-icon-social::before { width: 18px; height: 16px; }
   .dropdown-grid .nav-icon-social::after { width: 9px; }
 }
+
+
+/* =========================================================
+   Polished dropdown service icons
+   Cleaner, larger SVG icons instead of CSS-drawn symbols.
+========================================================= */
+
+.dropdown-grid .nav-icon::before,
+.dropdown-grid .nav-icon::after {
+  display: none !important;
+  content: none !important;
+}
+
+.dropdown-grid .nav-icon {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  border-radius: 16px !important;
+  display: grid !important;
+  place-items: center !important;
+  color: #25d5ff;
+}
+
+.dropdown-grid .nav-icon svg {
+  display: block !important;
+  width: 26px !important;
+  height: 26px !important;
+  margin: 0 !important;
+  overflow: visible;
+  filter: drop-shadow(0 0 8px rgba(0, 194, 255, .16));
+}
+
+.dropdown-item:hover .nav-icon svg,
+.dropdown-item:focus-visible .nav-icon svg {
+  color: #7be8ff;
+  filter: drop-shadow(0 0 10px rgba(0, 194, 255, .22));
+}
+
+@media (max-width: 920px) {
+  .dropdown-grid .nav-icon {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 14px !important;
+  }
+
+  .dropdown-grid .nav-icon svg {
+    width: 22px !important;
+    height: 22px !important;
+  }
+}
