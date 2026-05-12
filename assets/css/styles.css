@@ -4913,3 +4913,56 @@ body {
     height: 22px !important;
   }
 }
+
+
+/* =========================================================
+   Dropdown icon box size refinement
+   Make service icon boxes smaller and give text more room.
+========================================================= */
+
+.dropdown-item {
+  grid-template-columns: 56px 1fr !important;
+  gap: 14px !important;
+  padding: 16px 18px !important;
+}
+
+.dropdown-grid .nav-icon {
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  border-radius: 14px !important;
+}
+
+.dropdown-grid .nav-icon svg {
+  width: 22px !important;
+  height: 22px !important;
+}
+
+.dropdown-item strong {
+  font-size: 0.94rem;
+}
+
+.dropdown-item span span {
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 920px) {
+  .dropdown-item {
+    grid-template-columns: 50px 1fr !important;
+    gap: 12px !important;
+    padding: 13px 14px !important;
+  }
+
+  .dropdown-grid .nav-icon {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 12px !important;
+  }
+
+  .dropdown-grid .nav-icon svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+}
