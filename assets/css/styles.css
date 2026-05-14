@@ -6269,3 +6269,13 @@ body {
 .yolingo-screen-card .screen-browser img {
   object-position: top center !important;
 }
+
+
+/* Center-friendly anchor fallback */
+#websites,
+#redesign,
+#ecommerce,
+#identity,
+#social {
+  scroll-margin-top: 34vh;
+}

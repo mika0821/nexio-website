@@ -199,3 +199,61 @@ document.querySelectorAll('.ba-slider').forEach((slider) => {
     range.addEventListener('input', (event) => updateSlider(event.target.value));
   }
 });
+
+
+// Center service cards / anchor targets instead of placing them at the very top
+(() => {
+  const centerAnchorTarget = (hash, delay = 0) => {
+    if (!hash || hash === '#') return;
+
+    const targetId = decodeURIComponent(hash.slice(1));
+    const target = document.getElementById(targetId);
+
+    if (!target) return;
+
+    window.setTimeout(() => {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'nearest'
+      });
+    }, delay);
+  };
+
+  // When opening a page with a hash, center the target after the browser's default jump.
+  if (window.location.hash) {
+    centerAnchorTarget(window.location.hash, 180);
+  }
+
+  // When clicking an anchor on the same page, center the selected section/card.
+  document.querySelectorAll('a[href*="#"]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const href = link.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const url = new URL(href, window.location.href);
+      const samePage =
+        url.pathname === window.location.pathname &&
+        url.origin === window.location.origin;
+
+      if (!samePage || !url.hash) return;
+
+      const target = document.getElementById(decodeURIComponent(url.hash.slice(1)));
+      if (!target) return;
+
+      event.preventDefault();
+      history.pushState(null, '', url.hash);
+      centerAnchorTarget(url.hash, 0);
+
+      // Close mobile menu if it is open.
+      const navMenu = document.querySelector('.nav-menu');
+      const mobileToggle = document.querySelector('.mobile-toggle');
+      if (navMenu && mobileToggle) {
+        navMenu.classList.remove('active');
+        mobileToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+})();
