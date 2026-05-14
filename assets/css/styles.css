@@ -5754,3 +5754,245 @@ body {
     padding: 14px 6px 6px;
   }
 }
+
+
+/* =========================================================
+   Case study refinement update
+========================================================= */
+
+.card-link,
+.home-card-link {
+  letter-spacing: -0.01em;
+}
+
+/* YoLingo: smaller, cleaner screen gallery */
+.yolingo-screen-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  max-width: 1180px;
+  margin-inline: auto;
+}
+
+.yolingo-screen-card,
+.yolingo-screen-card.large-screen {
+  grid-column: auto !important;
+  padding: 10px !important;
+  border-radius: 22px !important;
+}
+
+.yolingo-screen-card .screen-browser {
+  height: 250px;
+  border-radius: 18px;
+}
+
+.yolingo-screen-card .screen-browser-bar {
+  height: 36px;
+  padding: 0 12px;
+}
+
+.yolingo-screen-card .screen-browser-bar em {
+  font-size: 10.8px;
+}
+
+.yolingo-screen-card .screen-browser img,
+.yolingo-screen-card.large-screen .screen-browser img {
+  width: 100%;
+  height: calc(100% - 36px) !important;
+  max-height: none !important;
+  object-fit: cover !important;
+  object-position: top center !important;
+  border-radius: 0 !important;
+}
+
+.yolingo-screen-card .screen-caption {
+  padding: 13px 6px 5px;
+}
+
+.yolingo-screen-card .screen-caption h3 {
+  margin-top: 9px;
+  font-size: 1rem;
+}
+
+.yolingo-screen-card:hover {
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1000px) {
+  .case-hero-grid {
+    gap: 28px;
+  }
+
+  .case-slider-grid {
+    gap: 18px;
+  }
+
+  .ba-slider {
+    height: 420px;
+  }
+
+  .yolingo-screen-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .yolingo-screen-card .screen-browser {
+    height: 225px;
+  }
+}
+
+@media (max-width: 720px) {
+  .case-hero {
+    padding: 104px 0 44px !important;
+  }
+
+  .case-hero h1 {
+    font-size: clamp(1.8rem, 8.5vw, 2.65rem) !important;
+    line-height: 1.08;
+  }
+
+  .case-hero p {
+    font-size: .92rem;
+    line-height: 1.62;
+  }
+
+  .case-hero-card {
+    padding: 8px !important;
+    border-radius: 20px !important;
+  }
+
+  .case-hero-card img {
+    border-radius: 15px !important;
+    max-height: 280px;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  .case-overview-grid {
+    gap: 16px;
+  }
+
+  .case-overview-text h2,
+  .mobile-showcase-copy h2 {
+    font-size: clamp(1.75rem, 8vw, 2.45rem);
+  }
+
+  .case-overview-box {
+    padding: 18px !important;
+  }
+
+  .case-overview-box p {
+    font-size: .92rem;
+    line-height: 1.65;
+  }
+
+  .comparison-slider-card {
+    padding: 10px !important;
+    border-radius: 20px !important;
+  }
+
+  .comparison-card-head {
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  .comparison-card-head strong {
+    font-size: .78rem;
+  }
+
+  .ba-slider {
+    height: 270px !important;
+    border-radius: 16px !important;
+    background: #eef5fc;
+  }
+
+  .ba-img {
+    object-fit: contain !important;
+    object-position: center !important;
+    background: #eef5fc;
+  }
+
+  .ba-slider::before,
+  .ba-slider::after {
+    top: 10px;
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .ba-handle span {
+    width: 42px;
+    height: 42px;
+  }
+
+  .ba-handle span::before {
+    left: 13px;
+  }
+
+  .ba-handle span::after {
+    right: 13px;
+  }
+
+  .improvement-grid {
+    gap: 12px;
+  }
+
+  .improvement-card {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .case-study-promo {
+    padding: 22px !important;
+  }
+
+  .yolingo-screen-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+
+  .yolingo-screen-card .screen-browser {
+    height: 205px;
+  }
+
+  .yolingo-mobile-section {
+    padding-top: 54px;
+    padding-bottom: 54px;
+  }
+
+  .mobile-phone-row {
+    gap: 12px;
+  }
+
+  .mobile-phone-row img {
+    width: calc(50% - 6px) !important;
+    max-height: 440px !important;
+    object-fit: cover;
+    object-position: top center;
+  }
+}
+
+@media (max-width: 430px) {
+  .case-hero {
+    padding-top: 96px !important;
+  }
+
+  .case-hero-card img {
+    max-height: 220px;
+  }
+
+  .ba-slider {
+    height: 230px !important;
+  }
+
+  .yolingo-screen-card .screen-browser {
+    height: 185px;
+  }
+
+  .mobile-phone-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobile-phone-row img {
+    width: min(100%, 270px) !important;
+    max-height: 470px !important;
+  }
+}
