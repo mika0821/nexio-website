@@ -6279,3 +6279,15 @@ body {
 #social {
   scroll-margin-top: 34vh;
 }
+
+
+/* Stronger mobile anchor positioning fallback */
+@media (max-width: 920px) {
+  #websites,
+  #redesign,
+  #ecommerce,
+  #identity,
+  #social {
+    scroll-margin-top: 42vh;
+  }
+}

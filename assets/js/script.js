@@ -257,3 +257,80 @@ document.querySelectorAll('.ba-slider').forEach((slider) => {
     });
   });
 })();
+
+
+// Stronger mobile anchor centering fix
+// This runs after normal hash navigation and re-centers the service card manually.
+(() => {
+  const serviceHashes = ['#websites', '#redesign', '#ecommerce', '#identity', '#social'];
+
+  const isServiceHash = (hash) => serviceHashes.includes(hash);
+  const isMobile = () => window.matchMedia('(max-width: 920px)').matches;
+
+  const getHeaderHeight = () => {
+    const header = document.querySelector('.site-header');
+    return header ? header.getBoundingClientRect().height : 0;
+  };
+
+  const centerTargetManually = (hash, smooth = true) => {
+    if (!hash || !isServiceHash(hash)) return;
+
+    const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+    if (!target) return;
+
+    const rect = target.getBoundingClientRect();
+    const headerHeight = getHeaderHeight();
+    const viewportHeight = window.innerHeight;
+
+    // On mobile, place the service card slightly below center so it feels natural
+    // and is not hidden by the fixed navbar.
+    const desiredTop = isMobile()
+      ? headerHeight + Math.max(32, (viewportHeight - headerHeight - rect.height) / 2)
+      : Math.max(90, (viewportHeight - rect.height) / 2);
+
+    const top = window.scrollY + rect.top - desiredTop;
+
+    window.scrollTo({
+      top: Math.max(0, top),
+      behavior: smooth ? 'smooth' : 'auto'
+    });
+  };
+
+  const recenterSeveralTimes = (hash) => {
+    // Mobile layout/menu/header can change height after click, so repeat shortly.
+    [80, 260, 620].forEach((delay, index) => {
+      window.setTimeout(() => centerTargetManually(hash, index !== 0), delay);
+    });
+  };
+
+  // Fix links that go to service anchors from the current page.
+  document.querySelectorAll('a[href*="#"]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+
+      const url = new URL(href, window.location.href);
+      if (!isServiceHash(url.hash)) return;
+
+      // If this is the same page, our other anchor handler prevents default.
+      // If it is another page, this will run after the new page loads there.
+      if (url.pathname === window.location.pathname && url.origin === window.location.origin) {
+        recenterSeveralTimes(url.hash);
+      }
+    }, { passive: true });
+  });
+
+  // Fix direct page load like services.html#websites
+  window.addEventListener('load', () => {
+    if (isServiceHash(window.location.hash)) {
+      recenterSeveralTimes(window.location.hash);
+    }
+  });
+
+  // Fix browser back/forward hash navigation.
+  window.addEventListener('hashchange', () => {
+    if (isServiceHash(window.location.hash)) {
+      recenterSeveralTimes(window.location.hash);
+    }
+  });
+})();
